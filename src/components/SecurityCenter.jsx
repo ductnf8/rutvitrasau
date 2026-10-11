@@ -5,11 +5,9 @@ import {
   AlertTriangle, 
   CheckCircle2, 
   XCircle, 
-  Lock,
-  EyeOff,
-  Phone
+  Lock
 } from 'lucide-react';
-import { SECURITY_COMPARISON, SITE_CONFIG } from '../data/siteData';
+import { SECURITY_COMPARISON } from '../data/siteData';
 
 export default function SecurityCenter() {
   return (
@@ -85,26 +83,6 @@ export default function SecurityCenter() {
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Hotline Verification Alert */}
-          <div className="security-alert-box">
-            <div className="security-alert-content">
-              <div className="security-alert-icon">
-                <EyeOff size={20} color="#b45309" />
-              </div>
-              <span className="security-alert-text">
-                Kênh liên hệ chính thức duy nhất của RutVi24H: <strong className="security-alert-phone">Zalo/Hotline: {SITE_CONFIG.hotlineFormatted}</strong>
-              </span>
-            </div>
-            <a
-              href={`tel:${SITE_CONFIG.hotline}`}
-              className="btn btn-primary btn-sm security-verify-btn"
-              id="security-verify-call"
-            >
-              <Phone size={15} />
-              <span>Gọi Trực Tiếp</span>
-            </a>
           </div>
         </motion.div>
       </div>

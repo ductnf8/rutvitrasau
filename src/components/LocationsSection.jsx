@@ -84,7 +84,7 @@ export default function LocationsSection() {
                 style={{ width: '100%' }}
               >
                 <Phone size={16} />
-                <span>Gọi Đặt Hẹn Trước: {SITE_CONFIG.hotlineFormatted}</span>
+                <span>Gọi Đặt Hẹn Trước</span>
               </a>
             </div>
           </motion.div>
