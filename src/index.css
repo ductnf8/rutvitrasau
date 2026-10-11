@@ -681,7 +681,7 @@ ul, ol {
 .mobile-drawer-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border-light);
   margin-bottom: 20px;
@@ -696,6 +696,7 @@ ul, ol {
   align-items: center;
   justify-content: center;
   color: var(--momo-600);
+  margin-left: auto;
 }
 
 .mobile-nav-list {

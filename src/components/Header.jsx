@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Phone, 
-  MessageCircle, 
-  Menu, 
-  X, 
+import {
+  Phone,
+  MessageCircle,
+  Menu,
+  X,
   ChevronRight,
   Sparkles
 } from 'lucide-react';
@@ -47,9 +47,9 @@ export default function Header({ onOpenCalculator }) {
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-fluid-container header-container">
           {/* Logo */}
-          <a 
-            href="#hero" 
-            className="brand-logo" 
+          <a
+            href="#hero"
+            className="brand-logo"
             onClick={(e) => handleNavClick(e, '#hero')}
           >
             <div className="brand-logo-icon">
@@ -129,9 +129,6 @@ export default function Header({ onOpenCalculator }) {
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
             >
               <div className="mobile-drawer-header">
-                <span style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1e293b' }}>
-                  Menu Điều Hướng
-                </span>
                 <button
                   type="button"
                   className="mobile-drawer-close"
