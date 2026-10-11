@@ -617,6 +617,16 @@ ul, ol {
   border: 1.5px solid #e2e8f0;
 }
 
+#header-zalo-cta {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  #header-zalo-cta {
+    display: inline-flex;
+  }
+}
+
 @media (min-width: 1160px) {
   .header-phone-btn {
     display: inline-flex;
