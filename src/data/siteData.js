@@ -17,7 +17,7 @@ export const SITE_CONFIG = {
 
 export const STATS = [
   { value: "10.000+", label: "Khách hàng tin chọn", icon: "Users" },
-  { value: "2 - 3 Phút", label: "Thời gian giải ngân TB", icon: "Clock" },
+  { value: "2-3 Phút", label: "Thời gian giải ngân TB", icon: "Clock" },
   { value: "100%", label: "Không giữ mã OTP/Mật khẩu", icon: "ShieldCheck" },
   { value: "24/7", label: "Hỗ trợ xuyên đêm & Lễ Tết", icon: "Zap" },
 ];

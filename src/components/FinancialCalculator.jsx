@@ -305,7 +305,7 @@ export default function FinancialCalculator({ selectedWalletId: externalWalletId
         onClick={handleZaloSubmit}
       >
         <MessageCircle size={18} style={{ flexShrink: 0 }} />
-        <span>Nhận Tiền Qua Zalo: {formatCurrency(finalReceived)}</span>
+        <span>Nhận Ngay {formatCurrency(finalReceived)}</span>
         <ArrowRight size={18} style={{ flexShrink: 0 }} />
       </motion.button>
 

@@ -734,10 +734,10 @@ ul, ol {
    ========================================================================== */
 .hero-section {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 36px;
+  padding-top: 16px;
+  padding-bottom: 32px;
   overflow: hidden;
-  background: radial-gradient(circle at 10% 20%, rgba(216, 45, 139, 0.05) 0%, transparent 45%),
+  background: radial-gradient(circle at 10% 20%, rgba(216, 45, 139, 0.06) 0%, transparent 45%),
               radial-gradient(circle at 90% 80%, rgba(165, 0, 100, 0.04) 0%, transparent 45%);
 }
 
@@ -747,37 +747,24 @@ ul, ol {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .hero-section > .container {
     width: 100%;
+    max-width: 1360px;
   }
 }
 
-/* Khối Hero Shell bọc trọn vẹn toàn bộ Hero Content & Calculator */
+/* Khối Hero Shell: Bỏ viền bao quanh trên Mobile và Desktop để loại bỏ tình trạng 3 viền */
 .hero-shell {
-  background: linear-gradient(180deg, #ffffff 0%, #fff7fb 100%);
-  border: 1.5px solid var(--border-light);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 10px 40px -10px rgba(165, 0, 100, 0.08);
-  padding: 24px 16px 20px 16px;
-  position: relative;
-  overflow: hidden;
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .hero-shell {
-    padding: 36px 30px 28px 30px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-shell {
-    padding: 28px 36px;
-  }
+  position: relative;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .hero-grid {
