@@ -79,7 +79,7 @@ export default function Hero({ selectedWalletId, onSelectWallet }) {
                   id="hero-zalo-cta"
                 >
                   <MessageCircle size={18} />
-                  <span>Chat Zalo Nhận Báo Phí</span>
+                  <span>Chat Zalo</span>
                 </a>
                 <a
                   href={`tel:${SITE_CONFIG.hotline}`}
