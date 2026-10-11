@@ -87,7 +87,7 @@ export default function Hero({ selectedWalletId, onSelectWallet }) {
                   id="hero-call-cta"
                 >
                   <PhoneCall size={18} />
-                  <span>Hotline: {SITE_CONFIG.hotlineFormatted}</span>
+                  <span>Gọi Trực Tiếp</span>
                 </a>
               </div>
 

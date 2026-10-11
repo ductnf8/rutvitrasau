@@ -956,16 +956,6 @@ ul, ol {
   }
 }
 
-.calc-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-  background: linear-gradient(90deg, var(--momo-600) 0%, var(--momo-400) 60%, var(--emerald-500) 100%);
-}
 
 .calc-header {
   display: flex;
@@ -2064,16 +2054,23 @@ ul, ol {
 /* Security Alert Box */
 .security-alert-box {
   margin-top: 28px;
-  padding: 16px 20px;
+  padding: 18px 20px;
   background-color: #fffbeb;
   border: 1.5px solid #fde68a;
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 16px;
   box-shadow: 0 4px 14px rgba(217, 119, 6, 0.08);
+}
+
+.security-alert-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
 }
 
 .security-alert-icon {
@@ -2103,6 +2100,43 @@ ul, ol {
   border-radius: 6px;
   display: inline-block;
   margin-left: 4px;
+}
+
+.security-verify-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .security-alert-box {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 14px;
+    gap: 14px;
+  }
+
+  .security-alert-content {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .security-alert-text {
+    font-size: 0.85rem;
+  }
+
+  .security-alert-phone {
+    display: block;
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 0.95rem;
+    width: fit-content;
+  }
+
+  .security-verify-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 11px 16px;
+  }
 }
 
 /* ==========================================================================
@@ -2593,6 +2627,124 @@ ul, ol {
   color: var(--momo-600);
 }
 
+/* Guide Modal - Cố định Header tuyệt đối khi cuộn */
+.guide-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.guide-modal-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-float);
+  overflow: hidden; /* Cực kỳ quan trọng: header cố định, chỉ cuộn body */
+  position: relative;
+}
+
+.guide-modal-fixed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1.5px solid #f1f5f9;
+  background-color: #ffffff;
+  z-index: 10;
+  flex-shrink: 0;
+  gap: 12px;
+}
+
+.guide-modal-fixed-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.guide-modal-fixed-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--slate-900);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.guide-modal-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f1f5f9;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #475569;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.guide-modal-close-btn:hover {
+  background-color: #fee2e2;
+  color: #ef4444;
+}
+
+.guide-modal-scroll-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 24px 28px 24px;
+  flex: 1;
+}
+
+.guide-modal-body-title {
+  font-size: 1.35rem;
+  font-weight: 850;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.guide-modal-meta-row {
+  display: flex;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.guide-modal-content-text {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: #334155;
+}
+
+.guide-modal-bottom-cta {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
 /* ==========================================================================
    Site Footer (Clean Light Pastel MoMo Canvas - Zero Dark Black)
    ========================================================================== */
@@ -2619,9 +2771,9 @@ ul, ol {
 }
 
 .footer-col-title {
-  font-size: 0.9375rem;
-  font-weight: 800;
-  color: var(--momo-700);
+  font-size: 0.95rem;
+  font-weight: 850;
+  color: #730045;
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -2634,25 +2786,37 @@ ul, ol {
 }
 
 .footer-link {
-  font-size: 0.84rem;
-  color: var(--slate-600);
-  transition: color var(--transition-fast);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #334155;
+  transition: all var(--transition-fast);
 }
 
 .footer-link:hover {
-  color: var(--momo-600);
+  color: #a50064;
+  transform: translateX(2px);
 }
 
 .footer-bottom-bar {
-  border-top: 1px solid var(--momo-100);
+  border-top: 1.5px solid #fce7f3;
   padding-top: 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
-  font-size: 0.78125rem;
-  color: var(--slate-500);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #475569;
+}
+
+.footer-bottom-bar a {
+  color: #475569;
+  font-weight: 600;
+}
+
+.footer-bottom-bar a:hover {
+  color: #a50064;
 }
 
 @media (min-width: 768px) {

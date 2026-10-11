@@ -6,7 +6,8 @@ import {
   CheckCircle2, 
   XCircle, 
   Lock,
-  EyeOff
+  EyeOff,
+  Phone
 } from 'lucide-react';
 import { SECURITY_COMPARISON, SITE_CONFIG } from '../data/siteData';
 
@@ -88,7 +89,7 @@ export default function SecurityCenter() {
 
           {/* Hotline Verification Alert */}
           <div className="security-alert-box">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div className="security-alert-content">
               <div className="security-alert-icon">
                 <EyeOff size={20} color="#b45309" />
               </div>
@@ -98,10 +99,11 @@ export default function SecurityCenter() {
             </div>
             <a
               href={`tel:${SITE_CONFIG.hotline}`}
-              className="btn btn-primary btn-sm"
+              className="btn btn-primary btn-sm security-verify-btn"
               id="security-verify-call"
             >
-              Xác Minh Gọi {SITE_CONFIG.hotlineFormatted}
+              <Phone size={15} />
+              <span>Gọi Trực Tiếp</span>
             </a>
           </div>
         </motion.div>

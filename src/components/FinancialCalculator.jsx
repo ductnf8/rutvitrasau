@@ -312,7 +312,7 @@ export default function FinancialCalculator({ selectedWalletId: externalWalletId
       {/* Security Note */}
       <div className="calc-security-note">
         <ShieldCheck size={14} color="#10b981" />
-        <span>Cam kết không phí ẩn • Không giữ OTP • Nhận tiền 30 giây</span>
+        <span>Cam kết không phụ phí</span>
       </div>
     </div>
   );

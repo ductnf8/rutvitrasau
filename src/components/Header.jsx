@@ -78,7 +78,7 @@ export default function Header({ onOpenCalculator }) {
               id="header-phone-btn"
             >
               <Phone size={15} />
-              <span>{SITE_CONFIG.hotlineFormatted}</span>
+              <span>Gọi Trực Tiếp</span>
             </a>
 
             <a

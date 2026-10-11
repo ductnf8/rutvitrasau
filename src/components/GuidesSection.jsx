@@ -109,81 +109,58 @@ export default function GuidesSection() {
       <AnimatePresence>
         {activeGuide && (
           <div 
-            style={{
-              position: 'fixed',
-              inset: 0,
-              backgroundColor: 'rgba(15, 23, 42, 0.65)',
-              backdropFilter: 'blur(6px)',
-              zIndex: 100,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '20px'
-            }}
+            className="guide-modal-overlay"
             onClick={() => setActiveGuide(null)}
           >
             <motion.div
+              className="guide-modal-card"
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              style={{
-                backgroundColor: '#ffffff',
-                borderRadius: 'var(--radius-xl)',
-                maxWidth: '680px',
-                width: '100%',
-                maxHeight: '90vh',
-                overflowY: 'auto',
-                padding: '32px',
-                boxShadow: 'var(--shadow-float)',
-                position: 'relative'
-              }}
             >
-              <button
-                type="button"
-                onClick={() => setActiveGuide(null)}
-                style={{
-                  position: 'absolute',
-                  top: '20px',
-                  right: '20px',
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: '#f1f5f9',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#64748b'
-                }}
-                aria-label="Đóng bài viết"
-              >
-                <X size={20} />
-              </button>
-
-              <span className="guide-tag">{activeGuide.category}</span>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', margin: '10px 0 16px', lineHeight: 1.35 }}>
-                {activeGuide.title}
-              </h3>
-              <div style={{ display: 'flex', gap: '16px', fontSize: '0.8125rem', color: '#94a3b8', marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid #e2e8f0' }}>
-                <span>Tác giả: <strong>{activeGuide.author}</strong></span>
-                <span>•</span>
-                <span>Cập nhật: {activeGuide.date}</span>
-              </div>
-
-              <div style={{ fontSize: '0.9375rem', lineHeight: 1.7, color: '#334155' }}>
-                {getFullContent(activeGuide.id)}
-              </div>
-
-              <div style={{ marginTop: '32px', paddingTop: '20px', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
-                <span style={{ fontSize: '0.875rem', color: '#64748b' }}>Cần hỗ trợ quy đổi ví ngay?</span>
-                <a
-                  href={SITE_CONFIG.zaloUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-zalo btn-sm"
+              {/* Header Cố Định Tuyệt Đối - Không Bao Giờ Bị Cuộn Khi Vuốt */}
+              <div className="guide-modal-fixed-header">
+                <div className="guide-modal-fixed-header-left">
+                  <span className="guide-tag" style={{ margin: 0 }}>{activeGuide.category}</span>
+                  <span className="guide-modal-fixed-title">{activeGuide.title}</span>
+                </div>
+                <button
+                  type="button"
+                  className="guide-modal-close-btn"
+                  onClick={() => setActiveGuide(null)}
+                  aria-label="Đóng bài viết"
                 >
-                  <span>Chat Zalo {SITE_CONFIG.zaloPhone}</span>
-                </a>
+                  <X size={20} />
+                </button>
+              </div>
+
+              {/* Phần Thân Cuộn Độc Lập Bên Dưới */}
+              <div className="guide-modal-scroll-body">
+                <h3 className="guide-modal-body-title">
+                  {activeGuide.title}
+                </h3>
+                <div className="guide-modal-meta-row">
+                  <span>Tác giả: <strong>{activeGuide.author}</strong></span>
+                  <span>•</span>
+                  <span>Cập nhật: {activeGuide.date}</span>
+                </div>
+
+                <div className="guide-modal-content-text">
+                  {getFullContent(activeGuide.id)}
+                </div>
+
+                <div className="guide-modal-bottom-cta">
+                  <span style={{ fontSize: '0.875rem', color: '#475569', fontWeight: 600 }}>Cần hỗ trợ quy đổi ví ngay?</span>
+                  <a
+                    href={SITE_CONFIG.zaloUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-zalo btn-sm"
+                  >
+                    <span>Chat Zalo Tư Vấn 24/7</span>
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
