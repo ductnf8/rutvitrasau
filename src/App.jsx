@@ -37,11 +37,11 @@ export default function App() {
         {/* 4. Standard 5-Step Process */}
         <ProcessStepper />
 
-        {/* 5. Security & Anti-Scam Shield */}
-        <SecurityCenter />
-
-        {/* 6. Transparent Fee Tiers */}
+        {/* 5. Transparent Fee Tiers (Bảng Phí Rút Ví Trả Sau Minh Bạch) */}
         <FeeTable />
+
+        {/* 6. Security & Anti-Scam Shield (Bảo Mật 100% & Cảnh Báo Lừa Đảo) */}
+        <SecurityCenter />
 
         {/* 7. Locations: Direct Hanoi Branch & Nationwide 24/7 */}
         <LocationsSection />
