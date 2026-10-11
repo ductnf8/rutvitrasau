@@ -7,10 +7,9 @@ import {
   FileCheck2, 
   Smartphone, 
   ShieldCheck, 
-  Banknote,
-  ArrowRight
+  Banknote
 } from 'lucide-react';
-import { PROCESS_STEPS, SITE_CONFIG } from '../data/siteData';
+import { PROCESS_STEPS } from '../data/siteData';
 
 export default function ProcessStepper() {
   const getStepIcon = (index) => {
@@ -75,28 +74,6 @@ export default function ProcessStepper() {
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Bottom Banner */}
-        <div className="process-bottom-banner">
-          <div>
-            <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e1b4b', marginBottom: '4px' }}>
-              Bạn cần rút tiền ví gấp ngay bây giờ?
-            </h4>
-            <p style={{ fontSize: '0.875rem', color: '#4338ca' }}>
-              Chuyên viên tài chính của RutVi24H đang trực tuyến và sẵn sàng hỗ trợ giải ngân sau 2 phút.
-            </p>
-          </div>
-          <a
-            href={SITE_CONFIG.zaloUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-zalo btn-md"
-            style={{ flexShrink: 0 }}
-          >
-            <span>Nhắn Zalo Ngay</span>
-            <ArrowRight size={16} />
-          </a>
         </div>
       </div>
     </section>

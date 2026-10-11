@@ -44,10 +44,19 @@ export default function Header({ onOpenCalculator }) {
   return (
     <>
       {/* Main Sticky Header */}
-      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
         <div className="header-fluid-container header-container">
-          {/* Logo */}
-          <a href="#hero" className="brand-logo" onClick={(e) => handleNavClick(e, '#hero')}>
+          {/* Logo (Ẩn trên navbar khi mobile menu mở) */}
+          <a 
+            href="#hero" 
+            className="brand-logo" 
+            style={{
+              opacity: mobileMenuOpen ? 0 : 1,
+              visibility: mobileMenuOpen ? 'hidden' : 'visible',
+              transition: 'opacity 0.2s ease, visibility 0.2s ease'
+            }}
+            onClick={(e) => handleNavClick(e, '#hero')}
+          >
             <div className="brand-logo-icon">
               <Sparkles size={20} />
             </div>
