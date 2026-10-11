@@ -520,11 +520,6 @@ ul, ol {
   }
 }
 
-.site-header.menu-open .brand-logo {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
 
 .brand-logo-icon {
   width: 36px;

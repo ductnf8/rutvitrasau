@@ -44,17 +44,12 @@ export default function Header({ onOpenCalculator }) {
   return (
     <>
       {/* Main Sticky Header */}
-      <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${mobileMenuOpen ? 'menu-open' : ''}`}>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="header-fluid-container header-container">
-          {/* Logo (Ẩn trên navbar khi mobile menu mở) */}
+          {/* Logo */}
           <a 
             href="#hero" 
             className="brand-logo" 
-            style={{
-              opacity: mobileMenuOpen ? 0 : 1,
-              visibility: mobileMenuOpen ? 'hidden' : 'visible',
-              transition: 'opacity 0.2s ease, visibility 0.2s ease'
-            }}
             onClick={(e) => handleNavClick(e, '#hero')}
           >
             <div className="brand-logo-icon">
@@ -134,12 +129,9 @@ export default function Header({ onOpenCalculator }) {
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
             >
               <div className="mobile-drawer-header">
-                <div className="brand-logo">
-                  <div className="brand-logo-icon">
-                    <Sparkles size={18} />
-                  </div>
-                  <span>{SITE_CONFIG.brandName}<span className="brand-accent">.vn</span></span>
-                </div>
+                <span style={{ fontWeight: 800, fontSize: '1.05rem', color: '#1e293b' }}>
+                  Menu Điều Hướng
+                </span>
                 <button
                   type="button"
                   className="mobile-drawer-close"
