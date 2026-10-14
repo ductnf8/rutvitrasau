@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { MapPin, Globe, Clock, Phone, CheckCircle2, MessageCircle } from 'lucide-react';
+import { MapPin, Globe, Clock, Phone, CheckCircle2 } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteData';
 
 export default function LocationsSection() {
@@ -70,47 +69,15 @@ export default function LocationsSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: 'auto', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <a
-                href={SITE_CONFIG.zaloUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-zalo btn-md"
-                style={{ width: '100%' }}
-                id="location-hanoi-zalo"
-              >
-                <MessageCircle size={16} />
-                <span>Nhắn Zalo Đặt Hẹn Tại Quầy</span>
-              </a>
-
+            <div className="hide-on-desktop" style={{ marginTop: 'auto', paddingTop: '16px' }}>
               <a
                 href={`tel:${SITE_CONFIG.hotline}`}
-                className="btn btn-secondary btn-md hide-on-desktop"
+                className="btn btn-secondary btn-md"
                 style={{ width: '100%' }}
                 id="location-hanoi-call"
               >
                 <Phone size={16} />
                 <span>Gọi Đặt Hẹn Trước</span>
-              </a>
-
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=%C4%90%C6%B0%E1%BB%9Dng+L%C3%A1ng%2C+%C4%90%E1%BB%91ng+%C4%90a%2C+H%C3%A0+N%E1%BB%99i"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  fontSize: '0.82rem',
-                  color: '#64748b',
-                  textDecoration: 'none',
-                  padding: '6px 0',
-                  fontWeight: 600
-                }}
-              >
-                <MapPin size={14} color="#a50064" />
-                <span>Mở chỉ đường Google Maps</span>
               </a>
             </div>
           </div>
@@ -172,7 +139,7 @@ export default function LocationsSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: 'auto', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <div className="hide-on-desktop" style={{ marginTop: 'auto', paddingTop: '16px' }}>
               <a
                 href={SITE_CONFIG.zaloUrl}
                 target="_blank"
@@ -181,25 +148,8 @@ export default function LocationsSection() {
                 style={{ width: '100%' }}
                 id="location-online-zalo"
               >
-                <MessageCircle size={16} />
-                <span>Nhắn Zalo Nhận Tiền Online 24/7</span>
+                <span>Nhắn Zalo Nhận Tiền Ngay</span>
               </a>
-
-              <div
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '6px',
-                  fontSize: '0.82rem',
-                  color: '#059669',
-                  padding: '6px 0',
-                  fontWeight: 600
-                }}
-              >
-                <CheckCircle2 size={14} color="#059669" />
-                <span>Hỗ trợ xuyên đêm & ngày Lễ, Tết</span>
-              </div>
             </div>
           </div>
         </div>
