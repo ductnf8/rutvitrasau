@@ -8,7 +8,7 @@ import {
   ChevronRight,
   Sparkles
 } from 'lucide-react';
-import { SITE_CONFIG } from '../data/siteData';
+import { SITE_CONFIG, NAV_LINKS } from '../data/siteData';
 
 export default function Header({ onOpenCalculator }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -22,15 +22,7 @@ export default function Header({ onOpenCalculator }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Ví Hỗ Trợ", href: "#wallets" },
-    { label: "Bảng Biểu Phí", href: "#fees" },
-    { label: "Quy Trình", href: "#process" },
-    { label: "Bảo Mật", href: "#security" },
-    { label: "Hỏi Đáp", href: "#faq" },
-    { label: "Hướng Dẫn", href: "#guides" },
-    { label: "Liên Hệ", href: "#contact" }
-  ];
+  const navLinks = NAV_LINKS;
 
   const handleNavClick = (e, href) => {
     e.preventDefault();

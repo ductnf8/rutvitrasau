@@ -19,6 +19,16 @@ export const SITE_CONFIG = {
   baseFeeOffline: 9.3,
 };
 
+export const NAV_LINKS = [
+  { label: "Ví Hỗ Trợ", href: "#wallets" },
+  { label: "Quy Trình", href: "#process" },
+  { label: "Bảng Biểu Phí", href: "#fees" },
+  { label: "Bảo Mật", href: "#security" },
+  { label: "Liên Hệ", href: "#contact" },
+  { label: "Hỏi Đáp", href: "#faq" },
+  { label: "Hướng Dẫn", href: "#guides" }
+];
+
 export const STATS = [
   { value: "10.000+", label: "Khách hàng tin chọn", icon: "Users" },
   { value: "2-3 Phút", label: "Thời gian giải ngân TB", icon: "Clock" },
@@ -169,7 +179,7 @@ export const PROCESS_STEPS = [
   {
     step: "01",
     title: "Liên Hệ Tư Vấn",
-    desc: "Khách hàng nhắn tin Zalo hoặc gọi Hotline 0869.098.696 thông báo loại ví (MoMo, ZaloPay, Kredivo...) và số tiền cần rút.",
+    desc: `Khách hàng nhắn tin Zalo hoặc gọi Hotline ${SITE_CONFIG.hotlineFormatted} thông báo loại ví (MoMo, ZaloPay, Kredivo...) và số tiền cần rút.`,
     time: "Ngay tức thì"
   },
   {
@@ -275,7 +285,7 @@ export const FAQ_DATA = [
   },
   {
     question: "Dịch vụ có hỗ trợ vào ban đêm, ngày lễ hoặc cuối tuần không?",
-    answer: "Có. Đội ngũ nhân viên trực tuyến của RutVi24H làm việc xuyên suốt 24/7/365, kể cả lúc nửa đêm, ngày Thứ Bảy, Chủ Nhật và các dịp Lễ, Tết. Bất cứ khi nào bạn có nhu cầu tài chính khẩn cấp, chỉ cần nhắn tin qua Zalo 0869.098.696 sẽ có chuyên viên hỗ trợ giải ngân ngay."
+    answer: `Có. Đội ngũ nhân viên trực tuyến của RutVi24H làm việc xuyên suốt 24/7/365, kể cả lúc nửa đêm, ngày Thứ Bảy, Chủ Nhật và các dịp Lễ, Tết. Bất cứ khi nào bạn có nhu cầu tài chính khẩn cấp, chỉ cần nhắn tin qua Zalo ${SITE_CONFIG.hotlineFormatted} sẽ có chuyên viên hỗ trợ giải ngân ngay.`
   }
 ];
 
