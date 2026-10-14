@@ -11,6 +11,7 @@ import FaqSection from './components/FaqSection';
 import GuidesSection from './components/GuidesSection';
 import Footer from './components/Footer';
 import FloatingActions from './components/FloatingActions';
+import DesktopPhoneModal from './components/DesktopPhoneModal';
 
 export default function App() {
   const [selectedWalletId, setSelectedWalletId] = useState('momo_trasau');
@@ -58,6 +59,9 @@ export default function App() {
 
       {/* Quick Action Buttons (Floating & Mobile Sticky) */}
       <FloatingActions />
+
+      {/* Desktop Call Interceptor Modal */}
+      <DesktopPhoneModal />
     </div>
   );
 }
