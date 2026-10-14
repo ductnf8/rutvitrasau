@@ -79,11 +79,12 @@ export default function Hero({ selectedWalletId, onSelectWallet }) {
                   id="hero-zalo-cta"
                 >
                   <MessageCircle size={18} />
-                  <span>Chat Zalo</span>
+                  <span className="hide-on-mobile">Nhắn Zalo Nhận Tiền Ngay (24/7)</span>
+                  <span className="hide-on-desktop">Chat Zalo</span>
                 </a>
                 <a
                   href={`tel:${SITE_CONFIG.hotline}`}
-                  className="btn btn-secondary btn-lg"
+                  className="btn btn-secondary btn-lg hide-on-desktop"
                   id="hero-call-cta"
                 >
                   <PhoneCall size={18} />

@@ -71,15 +71,6 @@ export default function Header({ onOpenCalculator }) {
           {/* Action CTAs */}
           <div className="header-actions">
             <a
-              href={`tel:${SITE_CONFIG.hotline}`}
-              className="btn btn-secondary btn-sm header-phone-btn"
-              id="header-phone-btn"
-            >
-              <Phone size={15} />
-              <span>Gọi Trực Tiếp</span>
-            </a>
-
-            <a
               href={SITE_CONFIG.zaloUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -87,7 +78,7 @@ export default function Header({ onOpenCalculator }) {
               id="header-zalo-cta"
             >
               <MessageCircle size={16} />
-              <span>Báo Phí Zalo</span>
+              <span>Báo Phí Zalo 24/7</span>
             </a>
 
             {/* Mobile Toggle Button */}

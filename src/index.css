@@ -391,6 +391,19 @@ ul, ol {
   border-radius: var(--radius-sm);
 }
 
+/* Responsive visibility utilities */
+@media (min-width: 768px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
 /* Pulsing Status Dot */
 .status-dot {
   width: 8px;

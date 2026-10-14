@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Globe, Clock, Phone, CheckCircle2 } from 'lucide-react';
+import { MapPin, Globe, Clock, Phone, CheckCircle2, MessageCircle } from 'lucide-react';
 import { SITE_CONFIG } from '../data/siteData';
 
 export default function LocationsSection() {
@@ -24,14 +24,7 @@ export default function LocationsSection() {
         {/* Location Grid */}
         <div className="location-grid">
           {/* Hanoi Offline Card */}
-          <motion.div 
-            className="location-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
-          >
+          <div className="location-card">
             <span className="location-badge">
               <MapPin size={13} />
               <span>Giao Dịch Tại Quầy Hà Nội</span>
@@ -64,7 +57,7 @@ export default function LocationsSection() {
                 <Clock size={18} color="#a50064" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <div>
                   <strong>Giờ tiếp đón trực tiếp:</strong>
-                  <p>08:00 - 22:00 hàng ngày (Vui lòng gọi trước khi qua để chuẩn bị nước và phòng tiếp khách chu đáo).</p>
+                  <p>08:00 - 22:00 hàng ngày (Vui lòng liên hệ Zalo trước khi qua để chuẩn bị tiếp đón chu đáo).</p>
                 </div>
               </div>
 
@@ -77,31 +70,69 @@ export default function LocationsSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <a
+                href={SITE_CONFIG.zaloUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-zalo btn-md"
+                style={{ width: '100%' }}
+                id="location-hanoi-zalo"
+              >
+                <MessageCircle size={16} />
+                <span>Nhắn Zalo Đặt Hẹn Tại Quầy</span>
+              </a>
+
               <a
                 href={`tel:${SITE_CONFIG.hotline}`}
-                className="btn btn-secondary btn-md"
+                className="btn btn-secondary btn-md hide-on-desktop"
                 style={{ width: '100%' }}
+                id="location-hanoi-call"
               >
                 <Phone size={16} />
                 <span>Gọi Đặt Hẹn Trước</span>
               </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=%C4%90%C6%B0%E1%BB%9Dng+L%C3%A1ng%2C+%C4%90%E1%BB%91ng+%C4%90a%2C+H%C3%A0+N%E1%BB%99i"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  fontSize: '0.82rem',
+                  color: '#64748b',
+                  textDecoration: 'none',
+                  padding: '6px 0',
+                  fontWeight: 600
+                }}
+              >
+                <MapPin size={14} color="#a50064" />
+                <span>Mở chỉ đường Google Maps</span>
+              </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Online Nationwide Card */}
-          <motion.div 
-            className="location-card"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.15 }}
-            whileHover={{ y: -6, transition: { duration: 0.2 } }}
-          >
+          <div className="location-card">
             <span className="location-badge" style={{ backgroundColor: '#ecfdf5', color: '#059669' }}>
               <Globe size={13} />
               <span>Hỗ Trợ Online Toàn Quốc 24/7</span>
             </span>
+
+            <div className="location-image-wrapper">
+              <img 
+                src="/anh-bia-zalo.jpg" 
+                alt="Hệ thống hỗ trợ rút ví trả sau Online toàn quốc 24/7" 
+                className="location-office-img"
+                loading="lazy" 
+              />
+              <span className="location-image-caption" style={{ background: 'rgba(0, 104, 255, 0.88)' }}>
+                ⚡ Giải ngân Napas 24/7 nổ tài khoản trong 30 giây
+              </span>
+            </div>
 
             <h3 className="location-title">
               Hệ Thống Giải Ngân Tự Động 63 Tỉnh Thành
@@ -141,18 +172,36 @@ export default function LocationsSection() {
               </div>
             </div>
 
-            <div style={{ marginTop: 'auto', paddingTop: '16px' }}>
+            <div style={{ marginTop: 'auto', paddingTop: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
               <a
                 href={SITE_CONFIG.zaloUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-zalo btn-md"
                 style={{ width: '100%' }}
+                id="location-online-zalo"
               >
-                <span>Nhắn Zalo Nhận Tiền Ngay</span>
+                <MessageCircle size={16} />
+                <span>Nhắn Zalo Nhận Tiền Online 24/7</span>
               </a>
+
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '6px',
+                  fontSize: '0.82rem',
+                  color: '#059669',
+                  padding: '6px 0',
+                  fontWeight: 600
+                }}
+              >
+                <CheckCircle2 size={14} color="#059669" />
+                <span>Hỗ trợ xuyên đêm & ngày Lễ, Tết</span>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

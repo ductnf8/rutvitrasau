@@ -89,7 +89,7 @@ export default function Footer() {
             </a>
             <a
               href={`tel:${SITE_CONFIG.hotline}`}
-              className="btn btn-hotline btn-md"
+              className="btn btn-hotline btn-md hide-on-desktop"
               style={{ width: '100%' }}
             >
               <Phone size={16} />
