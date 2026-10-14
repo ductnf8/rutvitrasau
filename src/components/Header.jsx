@@ -51,13 +51,15 @@ export default function Header({ onOpenCalculator }) {
             href="#hero"
             className="brand-logo"
             onClick={(e) => handleNavClick(e, '#hero')}
+            aria-label={`${SITE_CONFIG.brandName} - Trang chủ`}
           >
-            <div className="brand-logo-icon">
-              <Sparkles size={20} />
-            </div>
-            <span>
-              {SITE_CONFIG.brandName}<span className="brand-accent">.vn</span>
-            </span>
+            <img
+              src={SITE_CONFIG.logoFull}
+              alt={`${SITE_CONFIG.brandName} - Dịch vụ rút ví trả sau`}
+              className="brand-logo-full-img"
+              width="150"
+              height="40"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -129,6 +131,12 @@ export default function Header({ onOpenCalculator }) {
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
             >
               <div className="mobile-drawer-header">
+                <img
+                  src={SITE_CONFIG.logoFull}
+                  alt={SITE_CONFIG.brandName}
+                  className="brand-logo-full-img"
+                  style={{ height: '30px', width: 'auto' }}
+                />
                 <button
                   type="button"
                   className="mobile-drawer-close"

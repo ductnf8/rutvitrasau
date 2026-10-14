@@ -58,19 +58,56 @@ export default function FinancialCalculator({ selectedWalletId: externalWalletId
       return method === 'offline' ? 2.0 : 1.8;
     }
 
-    let base = 8.5;
-    if (amount >= 10000000) {
-      base = 6.8;
-    } else if (amount >= 5000000) {
-      base = 7.5;
-    } else if (amount >= 2000000) {
-      base = 8.0;
+    let base = 7.0;
+
+    if (selectedWalletId === 'momo_trasau' || selectedWalletId === 'zalopay_trasau') {
+      // MoMo & ZaloPay: 5% - 7%
+      if (amount >= 10000000) {
+        base = 5.0;
+      } else if (amount >= 5000000) {
+        base = 5.6;
+      } else if (amount >= 2000000) {
+        base = 6.2;
+      } else {
+        base = 7.0;
+      }
+    } else if (selectedWalletId === 'tiktok_paylater') {
+      // TikTok PayLater: 10% - 12%
+      if (amount >= 10000000) {
+        base = 10.0;
+      } else if (amount >= 5000000) {
+        base = 10.8;
+      } else if (amount >= 2000000) {
+        base = 11.4;
+      } else {
+        base = 12.0;
+      }
+    } else if (selectedWalletId === 'fe_paylater') {
+      // FE PayLater: 9% - 12%
+      if (amount >= 10000000) {
+        base = 9.0;
+      } else if (amount >= 5000000) {
+        base = 10.0;
+      } else if (amount >= 2000000) {
+        base = 11.0;
+      } else {
+        base = 12.0;
+      }
     } else {
-      base = 8.5;
+      // Kredivo, SPayLater, Viettel Money: 7.8% - 8.8%
+      if (amount >= 10000000) {
+        base = 7.5;
+      } else if (amount >= 5000000) {
+        base = 8.0;
+      } else if (amount >= 2000000) {
+        base = 8.4;
+      } else {
+        base = 8.8;
+      }
     }
 
     if (method === 'offline') {
-      base += 1.5;
+      base += 1.0;
     }
 
     return parseFloat(base.toFixed(1));
@@ -164,7 +201,25 @@ export default function FinancialCalculator({ selectedWalletId: externalWalletId
                 className="wallet-mini-avatar" 
                 style={{ backgroundColor: selectedWallet.color }}
               >
-                {selectedWallet.name.charAt(0)}
+                {selectedWallet.logo ? (
+                  <img
+                    src={selectedWallet.logo}
+                    alt={selectedWallet.name}
+                    className="wallet-mini-avatar-img"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                      if (e.currentTarget.nextElementSibling) {
+                        e.currentTarget.nextElementSibling.style.display = 'flex';
+                      }
+                    }}
+                  />
+                ) : null}
+                <span 
+                  className="wallet-avatar-letter"
+                  style={{ display: selectedWallet.logo ? 'none' : 'flex' }}
+                >
+                  {selectedWallet.name.charAt(0)}
+                </span>
               </div>
               <div className="custom-dropdown-text">
                 <span className="dropdown-wallet-name">{selectedWallet.name}</span>
@@ -196,7 +251,25 @@ export default function FinancialCalculator({ selectedWalletId: externalWalletId
                     onClick={() => handleSelectWallet(wallet.id)}
                   >
                     <div className="wallet-mini-avatar" style={{ backgroundColor: wallet.color }}>
-                      {wallet.name.charAt(0)}
+                      {wallet.logo ? (
+                        <img
+                          src={wallet.logo}
+                          alt={wallet.name}
+                          className="wallet-mini-avatar-img"
+                          onError={(e) => {
+                            e.currentTarget.style.display = 'none';
+                            if (e.currentTarget.nextElementSibling) {
+                              e.currentTarget.nextElementSibling.style.display = 'flex';
+                            }
+                          }}
+                        />
+                      ) : null}
+                      <span 
+                        className="wallet-avatar-letter"
+                        style={{ display: wallet.logo ? 'none' : 'flex' }}
+                      >
+                        {wallet.name.charAt(0)}
+                      </span>
                     </div>
                     <div className="custom-dropdown-text">
                       <span className="dropdown-wallet-name">{wallet.name}</span>

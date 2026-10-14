@@ -9,6 +9,10 @@ export const SITE_CONFIG = {
   addressHanoi: "Đường Láng, Phường Láng Thượng, Quận Đống Đa, Hà Nội",
   addressShort: "Đường Láng, Đống Đa - Hà Nội",
   officeImage: "/van-phong-lang.jpg",
+  logoIcon: "/logo-icon.png",
+  logoFull: "/logo-full-horizontal.png",
+  logoText: "/logo-text.png",
+  ogImage: "/og-cover.png",
   workingHours: "24/7 (Cả Thứ Bảy, Chủ Nhật & Ngày Lễ)",
   minFeePercent: 1.6,
   baseFeeOnline: 7.8,
@@ -29,10 +33,11 @@ export const WALLETS_DATA = [
     provider: "Ngân hàng TPBank / Shinhan Bank",
     category: "popular",
     maxLimit: "20.000.000đ",
-    feeRange: "Từ 7.5% - 8.5%",
+    feeRange: "Từ 5.0% - 7.0%",
     speed: "2 - 3 phút",
     badge: "Phổ biến nhất",
     color: "#d82d8b",
+    logo: "/wallets/momo.png",
     features: [
       "Miễn lãi ngân hàng tới 45 ngày",
       "Thanh toán qua quét mã hóa đơn",
@@ -45,14 +50,49 @@ export const WALLETS_DATA = [
     provider: "Ngân hàng CIMB Bank Việt Nam",
     category: "popular",
     maxLimit: "20.000.000đ",
-    feeRange: "Từ 7.5% - 8.5%",
+    feeRange: "Từ 5.0% - 7.0%",
     speed: "2 - 3 phút",
     badge: "Khuyên dùng",
     color: "#0068ff",
+    logo: "/wallets/zalopay.png",
     features: [
       "Không chứng minh thu nhập",
       "Xử lý trực tiếp trên ứng dụng Zalo",
       "Bảo mật tài khoản 100%"
+    ]
+  },
+  {
+    id: "tiktok_paylater",
+    name: "TikTok PayLater",
+    provider: "TikTok & Đối tác Tài chính",
+    category: "popular",
+    maxLimit: "20.000.000đ",
+    feeRange: "Từ 10% - 12%",
+    speed: "2 - 3 phút",
+    badge: "Xu hướng mới",
+    color: "#010101",
+    logo: "/wallets/tiktok.png",
+    features: [
+      "Quy đổi qua đơn hàng TikTok Shop",
+      "Xử lý nhanh chóng không giữ OTP",
+      "Tiền chuyển thẳng về tài khoản ngân hàng"
+    ]
+  },
+  {
+    id: "fe_paylater",
+    name: "FE PayLater (FE Credit)",
+    provider: "Tài chính FE Credit (VPBank SMBC)",
+    category: "bnpl",
+    maxLimit: "20.000.000đ",
+    feeRange: "Từ 9% - 12%",
+    speed: "2 - 4 phút",
+    badge: "Hạn mức cao",
+    color: "#008853",
+    logo: "/wallets/fepaylater.png",
+    features: [
+      "Hạn mức tài chính linh hoạt từ FE Credit",
+      "Xác thực nhanh gọn, an toàn 100%",
+      "Hỗ trợ giải ngân online & trực tiếp 24/7"
     ]
   },
   {
@@ -65,6 +105,7 @@ export const WALLETS_DATA = [
     speed: "3 - 5 phút",
     badge: "Hạn mức cao",
     color: "#f97316",
+    logo: "/wallets/kredivo.png",
     features: [
       "Hạn mức lớn dành cho tài khoản chuẩn",
       "Hỗ trợ kỳ hạn linh hoạt",
@@ -81,6 +122,7 @@ export const WALLETS_DATA = [
     speed: "2 - 4 phút",
     badge: "Tiện lợi",
     color: "#ee4d2d",
+    logo: "/wallets/spaylater.png",
     features: [
       "Quy đổi qua đơn hàng dịch vụ thật",
       "Không ảnh hưởng điểm tín dụng",
@@ -97,58 +139,11 @@ export const WALLETS_DATA = [
     speed: "2 - 3 phút",
     badge: "Ổn định",
     color: "#e11d48",
+    logo: "/wallets/viettelmoney.png",
     features: [
       "Hệ thống viễn thông ổn định cao",
       "Thao tác dễ dàng trên app Viettel Money",
       "Hỗ trợ rút toàn quốc 24/7"
-    ]
-  },
-  {
-    id: "fundiin_bnpl",
-    name: "Ví Fundiin BNPL",
-    provider: "Fundiin Vietnam",
-    category: "bnpl",
-    maxLimit: "20.000.000đ",
-    feeRange: "Từ 8.0% - 9.5%",
-    speed: "3 - 5 phút",
-    badge: "Linh hoạt",
-    color: "#059669",
-    features: [
-      "Áp dụng cho mọi tài khoản Fundiin",
-      "Quy trình nhanh chóng minh bạch",
-      "Không giữ giấy tờ tùy thân"
-    ]
-  },
-  {
-    id: "smartpay_trasau",
-    name: "Ví SmartPay Trả Sau",
-    provider: "SmartNet & Đối tác Tài chính",
-    category: "other",
-    maxLimit: "20.000.000đ",
-    feeRange: "Từ 7.8% - 8.8%",
-    speed: "2 - 3 phút",
-    badge: "Tiện ích",
-    color: "#0284c7",
-    features: [
-      "Thanh toán dịch vụ hợp lệ",
-      "Xử lý trực tiếp trong 2 phút",
-      "Nhận tiền mọi ngân hàng tại VN"
-    ]
-  },
-  {
-    id: "tnex_trasau",
-    name: "Tnex Energy Trả Sau",
-    provider: "Ngân hàng TMCP Hàng Hải Việt Nam (MSB)",
-    category: "other",
-    maxLimit: "20.000.000đ",
-    feeRange: "Từ 8.0% - 9.0%",
-    speed: "2 - 3 phút",
-    badge: "Ngân hàng số",
-    color: "#7c3aed",
-    features: [
-      "Bảo mật ngân hàng MSB",
-      "Giải ngân trực tiếp vào STK chỉ định",
-      "Phí báo trọn gói trước khi làm"
     ]
   },
   {
@@ -161,6 +156,7 @@ export const WALLETS_DATA = [
     speed: "1 - 2 phút",
     badge: "Phí siêu rẻ",
     color: "#1e293b",
+    logo: "/wallets/creditcard.png",
     features: [
       "Đáo hạn & Rút tiền mặt POS/Online",
       "Hưởng trọn thời gian miễn lãi 45-55 ngày",
@@ -205,28 +201,28 @@ export const PROCESS_STEPS = [
 export const FEE_TIERS = [
   {
     limitRange: "Dưới 2.000.000 VNĐ",
-    feeRate: "Từ 8.5%",
+    feeRate: "Từ 7.0%",
     time: "2 - 3 phút",
     supportType: "Online & Tại Quầy",
     note: "Phù hợp tiêu dùng cấp bách"
   },
   {
     limitRange: "Từ 2.000.000 - 5.000.000 VNĐ",
-    feeRate: "Từ 8.0%",
+    feeRate: "Từ 6.2%",
     time: "2 - 3 phút",
     supportType: "Online & Tại Quầy",
     note: "Mức rút phổ biến nhất"
   },
   {
     limitRange: "Từ 5.000.000 - 10.000.000 VNĐ",
-    feeRate: "Từ 7.5%",
+    feeRate: "Từ 5.6%",
     time: "2 - 3 phút",
     supportType: "Online & Tại Quầy",
     note: "Chiết khấu tối ưu chi phí"
   },
   {
     limitRange: "Trên 10.000.000 - 50.000.000 VNĐ",
-    feeRate: "Từ 6.8% (Ưu đãi VIP)",
+    feeRate: "Từ 5.0% (Ưu đãi VIP)",
     time: "3 - 5 phút",
     supportType: "Online & Tại Quầy",
     note: "Cam kết phí cạnh tranh số 1 thị trường"
@@ -255,7 +251,7 @@ export const SECURITY_COMPARISON = {
 export const FAQ_DATA = [
   {
     question: "Dịch vụ rút ví trả sau tại RutVi24H hỗ trợ những loại ví nào?",
-    answer: "RutVi24H hỗ trợ chuyển đổi hạn mức tất cả các ví và dịch vụ Mua trước trả sau (BNPL) hợp pháp tại Việt Nam: Ví Trả Sau MoMo, Tài khoản Trả Sau ZaloPay, Hạn mức Kredivo, Shopee SPayLater, Viettel Money Trả Sau, Fundiin, SmartPay và Tnex. Chúng tôi cũng hỗ trợ rút tiền mặt và đáo hạn thẻ tín dụng quốc tế Visa/Mastercard."
+    answer: "RutVi24H hỗ trợ chuyển đổi hạn mức tất cả các ví và dịch vụ Mua trước trả sau (BNPL) phổ biến nhất hiện nay: Ví Trả Sau MoMo, Tài khoản Trả Sau ZaloPay, TikTok PayLater, FE PayLater (FE Credit), Hạn mức Kredivo, Shopee SPayLater và Viettel Money Trả Sau. Chúng tôi cũng hỗ trợ rút tiền mặt và đáo hạn thẻ tín dụng quốc tế Visa/Mastercard/JCB."
   },
   {
     question: "Rút ví trả sau có yêu cầu gửi mã OTP hay mật khẩu tài khoản không?",

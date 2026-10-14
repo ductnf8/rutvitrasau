@@ -18,10 +18,13 @@ export default function Footer() {
           {/* Col 1: Brand Info */}
           <div>
             <div className="brand-logo" style={{ color: 'var(--text-main)', marginBottom: '16px' }}>
-              <div className="brand-logo-icon">
-                <Sparkles size={18} />
-              </div>
-              <span>{SITE_CONFIG.brandName}<span className="brand-accent">.vn</span></span>
+              <img
+                src={SITE_CONFIG.logoFull}
+                alt={`${SITE_CONFIG.brandName} Logo`}
+                className="brand-logo-full-img"
+                width="140"
+                height="36"
+              />
             </div>
             <p style={{ fontSize: '0.875rem', lineHeight: 1.7, color: '#334155', marginBottom: '20px' }}>
               <strong>RutVi24H</strong> – Đơn vị uy tín hàng đầu cung cấp giải pháp quy đổi hạn mức Ví Trả Sau và Mua trước trả sau thành tiền mặt an toàn, minh bạch, giải ngân 2-3 phút tại Hà Nội & toàn quốc.

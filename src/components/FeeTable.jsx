@@ -10,7 +10,7 @@ export default function FeeTable() {
   const COMPACT_FEES = [
     { 
       limit: "Dưới 2 Triệu", 
-      rate: "Từ 8.5%", 
+      rate: "Từ 7.0%", 
       time: "2 - 3 phút", 
       isVip: false, 
       supportType: "Online & Quầy", 
@@ -18,7 +18,7 @@ export default function FeeTable() {
     },
     { 
       limit: "Từ 2 - 5 Triệu", 
-      rate: "Từ 8.0%", 
+      rate: "Từ 6.2%", 
       time: "2 - 3 phút", 
       isVip: false, 
       supportType: "Online & Quầy", 
@@ -26,7 +26,7 @@ export default function FeeTable() {
     },
     { 
       limit: "Từ 5 - 10 Triệu", 
-      rate: "Từ 7.5%", 
+      rate: "Từ 5.6%", 
       time: "2 - 3 phút", 
       isVip: false, 
       supportType: "Online & Quầy", 
@@ -34,7 +34,7 @@ export default function FeeTable() {
     },
     { 
       limit: "Từ 10 - 50 Triệu", 
-      rate: "Từ 6.8%", 
+      rate: "Từ 5.0%", 
       time: "3 - 5 phút", 
       isVip: true, 
       supportType: "Online & Quầy", 

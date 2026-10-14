@@ -116,7 +116,25 @@ export default function WalletsShowcase({ onSelectWallet }) {
                     className="wallet-logo-wrapper"
                     style={{ backgroundColor: wallet.color }}
                   >
-                    {wallet.name.charAt(0)}
+                    {wallet.logo ? (
+                      <img 
+                        src={wallet.logo} 
+                        alt={wallet.name}
+                        className="wallet-avatar-img"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          if (e.currentTarget.nextElementSibling) {
+                            e.currentTarget.nextElementSibling.style.display = 'flex';
+                          }
+                        }}
+                      />
+                    ) : null}
+                    <span 
+                      className="wallet-avatar-letter"
+                      style={{ display: wallet.logo ? 'none' : 'flex' }}
+                    >
+                      {wallet.name.charAt(0)}
+                    </span>
                   </div>
                   <div>
                     <h3 className="wallet-name">{wallet.name}</h3>
