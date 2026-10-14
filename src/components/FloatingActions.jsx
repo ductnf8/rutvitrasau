@@ -39,21 +39,6 @@ export default function FloatingActions() {
     <>
       {/* Floating Action Buttons (Desktop & Tablet) */}
       <div className="floating-actions" aria-label="Hỗ trợ nhanh">
-        {/* Zalo Button */}
-        <motion.a
-          href={SITE_CONFIG.zaloUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="floating-btn-zalo"
-          id="floating-zalo-btn"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <span className="status-dot"></span>
-          <MessageCircle size={20} />
-          <span>Zalo Tư Vấn 24/7</span>
-        </motion.a>
-
         {/* Scroll To Top */}
         <AnimatePresence>
           {showScrollTop && (
@@ -68,7 +53,7 @@ export default function FloatingActions() {
               whileTap={{ scale: 0.9 }}
               aria-label="Cuộn lên đầu trang"
             >
-              <ArrowUp size={18} />
+              <ArrowUp size={20} strokeWidth={2.5} />
             </motion.button>
           )}
         </AnimatePresence>
