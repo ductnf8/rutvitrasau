@@ -122,9 +122,16 @@ export default function WalletsShowcase({ onSelectWallet }) {
                         alt={wallet.name}
                         className="wallet-avatar-img"
                         onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          if (e.currentTarget.nextElementSibling) {
-                            e.currentTarget.nextElementSibling.style.display = 'flex';
+                          const currentSrc = e.currentTarget.getAttribute('src') || '';
+                          if (currentSrc.endsWith('.png')) {
+                            e.currentTarget.setAttribute('src', currentSrc.replace('.png', '.jpg'));
+                          } else if (currentSrc.endsWith('.jpg')) {
+                            e.currentTarget.setAttribute('src', currentSrc.replace('.jpg', '.webp'));
+                          } else {
+                            e.currentTarget.style.display = 'none';
+                            if (e.currentTarget.nextElementSibling) {
+                              e.currentTarget.nextElementSibling.style.display = 'flex';
+                            }
                           }
                         }}
                       />
