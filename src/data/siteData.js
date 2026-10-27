@@ -13,6 +13,8 @@ export const SITE_CONFIG = {
   logoFull: "/logo-full-horizontal.png",
   logoText: "/logo-text.png",
   ogImage: "/og-cover.png",
+  domain: "rutvi24h.com",
+  siteUrl: "https://rutvi24h.com",
   workingHours: "24/7 (Cả Thứ Bảy, Chủ Nhật & Ngày Lễ)",
   minFeePercent: 1.6,
   baseFeeOnline: 7.8,

@@ -114,7 +114,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="footer-bottom-bar">
-          <p>© 2026 {SITE_CONFIG.brandName}.vn – Dịch Vụ Rút Ví Trả Sau Uy Tín Toàn Quốc. Bảo lưu mọi quyền.</p>
+          <p>© 2026 {SITE_CONFIG.domain} – Dịch Vụ Rút Ví Trả Sau Uy Tín Toàn Quốc. Bảo lưu mọi quyền.</p>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a href="#security" className="footer-link" onClick={(e) => handleNavClick(e, '#security')}>Chính sách bảo mật</a>
             <a href="#fees" className="footer-link" onClick={(e) => handleNavClick(e, '#fees')}>Điều khoản dịch vụ</a>
